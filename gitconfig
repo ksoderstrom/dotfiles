@@ -1,0 +1,31 @@
+[user]
+  email = karl@karlsoderstrom.com
+  name = Karl Söderström
+[push]
+  default = current
+[color]
+  ui = auto
+[alias]
+  aa = add --all
+  ap = add --patch
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  ci = commit -v
+  co = checkout
+  pf = push --force-with-lease
+  st = status
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lll = log -13 --graph --decorate --pretty=oneline --abbrev-commit --all
+  delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+[merge]
+  ff = only
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
+[include]
+  path = ~/.gitconfig.local
