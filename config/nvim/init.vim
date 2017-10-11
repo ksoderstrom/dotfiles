@@ -17,7 +17,7 @@ Plug 'KeitaNakamura/neodark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'eugen0329/vim-esearch'
 Plug 'w0rp/ale'
-Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 syntax on                         " show syntax highlighting
