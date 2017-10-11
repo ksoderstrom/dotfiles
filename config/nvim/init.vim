@@ -18,6 +18,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'eugen0329/vim-esearch'
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 syntax on                         " show syntax highlighting
