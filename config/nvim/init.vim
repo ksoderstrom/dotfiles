@@ -7,17 +7,16 @@ let g:lightline = {
 
 " Plugins
 call plug#begin()
-Plug 'neomake/neomake'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'vim-ruby/vim-ruby'
-" Plug 'kien/ctrlp.vim'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'eugen0329/vim-esearch'
+Plug 'w0rp/ale'
 call plug#end()
 
 syntax on                         " show syntax highlighting
@@ -97,7 +96,4 @@ let g:esearch = {
 " if exists('+colorcolumn')
 "   set colorcolumn=80
 " endif
-
-" Neomake
-call neomake#configure#automake('w')
 
