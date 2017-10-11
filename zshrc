@@ -1,6 +1,8 @@
 # Change default zim location 
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
+export LC_CTYPE=en_US.UTF-8
+
 # Source zim
 if [[ -s ${ZIM_HOME}/init.zsh ]]; then
   source ${ZIM_HOME}/init.zsh
