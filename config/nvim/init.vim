@@ -19,6 +19,7 @@ Plug 'eugen0329/vim-esearch'
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
+Plug 'roxma/vim-tmux-clipboard'
 call plug#end()
 
 syntax on                         " show syntax highlighting
