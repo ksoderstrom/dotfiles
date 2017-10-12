@@ -21,6 +21,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-endwise'
 call plug#end()
 
 syntax on                         " show syntax highlighting
