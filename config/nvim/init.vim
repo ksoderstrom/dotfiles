@@ -88,6 +88,10 @@ let mapleader = ","
 
 nnoremap <C-p> :FuzzyOpen<CR>
 
+" allow ctrl-s to be used to save
+:nmap <c-s> :w<CR>
+:imap <c-s> <Esc>:w<CR>a
+
 let g:esearch = {
   \ 'adapter':    'ag',
   \ 'backend':    'nvim',
