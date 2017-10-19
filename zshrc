@@ -38,3 +38,5 @@ if which tmux 2>&1 >/dev/null; then
     exec true
   fi
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
