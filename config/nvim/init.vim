@@ -42,7 +42,7 @@ set incsearch                     " show search results as I type
 set ttimeoutlen=100               " decrease timeout for faster insert with 'O'
 set vb                            " enable visual bell (disable audio bell)
 set ruler                         " show row and column in footer
-set scrolloff=2                   " minimum lines above/below cursor
+set scrolloff=15                  " minimum lines above/below cursor
 set laststatus=2                  " always show status bar
 set list listchars=tab:»·,trail:· " show extra space characters
 set nofoldenable                  " disable code folding
