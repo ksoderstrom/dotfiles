@@ -106,6 +106,12 @@ nnoremap <C-p> :Files<CR>
 nmap <Leader>t :Files<CR>
 nmap <Leader>r :Tags<CR>
 
+" Gitgutter
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+"
 " ale
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
