@@ -64,8 +64,8 @@ set undofile
 set undodir=~/.vim/undodir
 
 " backups
-set backup                    " keep a backup file
-set backupdir=~/.vim/_backups " store backups here
+set nobackup                  " keep no backup file
+set nowritebackup             " No backups made while editing
 set directory=~/.vim/_swaps   " store swap files here
 
 " set leader key to comma
