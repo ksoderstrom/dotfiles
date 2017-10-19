@@ -24,6 +24,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
+Plug 'tpope/vim-rhubarb'
 call plug#end()
 
 syntax on                         " show syntax highlighting
