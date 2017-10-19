@@ -55,16 +55,6 @@ set wildmode=list:longest,full
 set backspace=indent,eol,start    " allow backspace to erase previously entered characters, autoindent, and newlines
 set mouse-=a                      " disable mouse input
 
-" put git status, column/row number, total lines, and percentage in status
-" set statusline=%F
-" set statusline+=%#todo#  "switch to todo highlight
-" set statusline+=%m       "modified flag
-" set statusline+=%*       "switch back to normal statusline highlight
-" set statusline+=%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
-
-" set dark background and color scheme
-"set background=dark
-"colorscheme base16-railscasts
 let g:neodark#terminal_transparent = 1
 let g:neodark#use_custom_terminal_theme = 1 " default: 0
 colorscheme neodark
@@ -81,8 +71,6 @@ set directory=~/.vim/_swaps   " store swap files here
 " set leader key to comma
 let mapleader = ","
 
-" nnoremap <C-p> :FuzzyOpen<CR>
-
 " allow ctrl-s to be used to save
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
@@ -94,11 +82,6 @@ let g:esearch = {
   \ 'batch_size': 1000,
   \ 'use':        ['visual', 'hlsearch', 'last'],
   \}
-
-" hint to keep lines short
-" if exists('+colorcolumn')
-"   set colorcolumn=80
-" endif
 
 " fzf
 nmap ; :Buffers<CR>
