@@ -23,6 +23,7 @@ Plug 'roxma/vim-tmux-clipboard'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
+Plug 'mbbill/undotree'
 call plug#end()
 
 syntax on                         " show syntax highlighting
