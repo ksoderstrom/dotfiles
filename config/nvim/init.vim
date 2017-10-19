@@ -12,7 +12,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'vim-ruby/vim-ruby'
-Plug 'cloudhead/neovim-fuzzy'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'eugen0329/vim-esearch'
@@ -84,14 +85,7 @@ set directory=~/.vim/_swaps   " store swap files here
 " set leader key to comma
 let mapleader = ","
 
-" ctrlp config
-" let g:ctrlp_map = '<leader>f'
-" let g:ctrlp_max_height = 30
-" let g:ctrlp_working_path_mode = 0
-" let g:ctrlp_match_window_reversed = 0
-" let g:ctrlp_custom_ignore = 'git\|bower_components\|dist\|node_modules'
-
-nnoremap <C-p> :FuzzyOpen<CR>
+" nnoremap <C-p> :FuzzyOpen<CR>
 
 " allow ctrl-s to be used to save
 :nmap <c-s> :w<CR>
@@ -109,4 +103,10 @@ let g:esearch = {
 " if exists('+colorcolumn')
 "   set colorcolumn=80
 " endif
+
+" fzf
+nmap ; :Buffers<CR>
+nnoremap <C-p> :Files<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>r :Tags<CR>
 
