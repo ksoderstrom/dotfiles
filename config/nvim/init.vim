@@ -48,7 +48,7 @@ set list listchars=tab:»·,trail:· " show extra space characters
 set nofoldenable                  " disable code folding
 set noshowmode                    " don't show -- INSERT --
 set signcolumn=yes                " always show sign column (lint, gitgutter, etc)
-
+set infercase                     " Completion recognizes capitalization
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
 
