@@ -27,19 +27,19 @@ call plug#end()
 syntax on                         " show syntax highlighting
 filetype plugin indent on
 set autoindent                    " set auto indent
+set autoread                      " Don't bother me hen a file changes
+set autowrite                     " Write on :next/:prev/^Z
 set ts=2                          " set indent to 2 spaces
 set shiftwidth=2
 set expandtab                     " use spaces, not tab characters
 set nocompatible                  " don't need to be compatible with old vim
 " set relativenumber                " show relative line numbers
 set number                        " show line numbers
-set showmatch                     " show bracket matches
 set ignorecase                    " ignore case in search
 set hlsearch                      " highlight all search matches
 set cursorline                    " highlight current line
 set smartcase                     " pay attention to case when caps are used
 set incsearch                     " show search results as I type
-set ttimeoutlen=100               " decrease timeout for faster insert with 'O'
 set vb                            " enable visual bell (disable audio bell)
 set ruler                         " show row and column in footer
 set scrolloff=15                  " minimum lines above/below cursor
@@ -71,6 +71,18 @@ set directory=~/.vim/_swaps   " store swap files here
 " set leader key to comma
 let mapleader = ","
 
+" macros
+nmap <Leader>e :NERDTreeToggle<CR>
+map <C-n> :bnext<CR>
+map <C-p> :bprev<CR>
+
+" having Ex mode start or showing me the command history
+" is a complete pain in the ass if i mistype
+map Q  <silent>
+map q: <silent>
+map K  <silent>
+map q <silent>
+
 " allow ctrl-s to be used to save
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
@@ -82,10 +94,11 @@ let g:esearch = {
   \ 'batch_size': 1000,
   \ 'use':        ['visual', 'hlsearch', 'last'],
   \}
+call esearch#map('<c-k>', 'esearch-word-under-cursor')
 
 " fzf
 nmap ; :Buffers<CR>
-nnoremap <C-p> :Files<CR>
+" nnoremap <C-p> :Files<CR>
 nmap <Leader>t :Files<CR>
 nmap <Leader>r :Tags<CR>
 
