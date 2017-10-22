@@ -33,7 +33,7 @@ set ts=2                          " set indent to 2 spaces
 set shiftwidth=2
 set expandtab                     " use spaces, not tab characters
 set nocompatible                  " don't need to be compatible with old vim
-" set relativenumber                " show relative line numbers
+set relativenumber                " show relative line numbers
 set number                        " show line numbers
 set ignorecase                    " ignore case in search
 set hlsearch                      " highlight all search matches
@@ -80,12 +80,13 @@ map <C-p> :bprev<CR>
 " is a complete pain in the ass if i mistype
 map Q  <silent>
 map q: <silent>
-map K  <silent>
-map q <silent>
 
 " allow ctrl-s to be used to save
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
+
+" use t to jump to tag
+noremap t <c-]>
 
 let g:esearch = {
   \ 'adapter':    'ag',
