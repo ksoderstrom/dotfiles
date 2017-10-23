@@ -86,7 +86,7 @@ map q: <silent>
 :imap <c-s> <Esc>:w<CR>a
 
 " use t to jump to tag
-noremap t <c-]>
+" noremap t <c-]>
 
 let g:esearch = {
   \ 'adapter':    'ag',
