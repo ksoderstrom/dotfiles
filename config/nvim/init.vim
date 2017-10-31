@@ -76,6 +76,10 @@ nmap <Leader>e :NERDTreeToggle<CR>
 map <C-n> :bnext<CR>
 map <C-p> :bprev<CR>
 
+" shift j/k navigate down/up to next empty line
+nnoremap <S-J> }
+nnoremap <S-K> {
+
 " having Ex mode start or showing me the command history
 " is a complete pain in the ass if i mistype
 map Q  <silent>
