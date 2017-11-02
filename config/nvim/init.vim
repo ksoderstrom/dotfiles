@@ -37,7 +37,7 @@ set relativenumber                " show relative line numbers
 set number                        " show line numbers
 set ignorecase                    " ignore case in search
 set hlsearch                      " highlight all search matches
-set cursorline                    " highlight current line
+" set cursorline                    " highlight current line
 set smartcase                     " pay attention to case when caps are used
 set incsearch                     " show search results as I type
 set vb                            " enable visual bell (disable audio bell)
@@ -51,6 +51,7 @@ set signcolumn=yes                " always show sign column (lint, gitgutter, et
 set infercase                     " Completion recognizes capitalization
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
+set regexpengine=1
 
 set backspace=indent,eol,start    " allow backspace to erase previously entered characters, autoindent, and newlines
 set mouse-=a                      " disable mouse input
