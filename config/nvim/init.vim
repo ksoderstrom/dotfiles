@@ -22,6 +22,13 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-rhubarb'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 call plug#end()
 
 syntax on                         " show syntax highlighting
@@ -59,6 +66,10 @@ set mouse-=a                      " disable mouse input
 let g:neodark#terminal_transparent = 1
 let g:neodark#use_custom_terminal_theme = 1 " default: 0
 colorscheme neodark
+
+" Enable deoplete when InsertEnter.
+let g:deoplete#enable_at_startup = 0
+autocmd InsertEnter * call deoplete#enable()
 
 " infinite undo
 set undofile
