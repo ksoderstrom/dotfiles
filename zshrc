@@ -39,6 +39,7 @@ if which tmux 2>&1 >/dev/null; then
   fi
 fi
 
+export FZF_DEFAULT_COMMAND='ag -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Always set the ssh agent in the same place
