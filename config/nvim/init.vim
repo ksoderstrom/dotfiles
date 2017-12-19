@@ -13,7 +13,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'eugen0329/vim-esearch'
+" Plug 'eugen0329/vim-esearch'
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
@@ -101,20 +101,21 @@ map q: <silent>
 " use t to jump to tag
 " noremap t <c-]>
 
-let g:esearch = {
-  \ 'adapter':    'ag',
-  \ 'backend':    'nvim',
-  \ 'out':        'win',
-  \ 'batch_size': 1000,
-  \ 'use':        ['visual', 'hlsearch', 'last'],
-  \}
-call esearch#map('<c-k>', 'esearch-word-under-cursor')
+" let g:esearch = {
+"   \ 'adapter':    'ag',
+"   \ 'backend':    'nvim',
+"   \ 'out':        'win',
+"   \ 'batch_size': 1000,
+"   \ 'use':        ['visual', 'hlsearch', 'last'],
+"   \}
+" call esearch#map('<c-k>', 'esearch-word-under-cursor')
 
 " fzf
 nmap ; :Buffers<CR>
 " nnoremap <C-p> :Files<CR>
 nmap <Leader>t :Files<CR>
 nmap <Leader>r :Tags<CR>
+nmap <Leader>f :Ag<CR>
 
 " Gitgutter
 let g:gitgutter_sign_added = '∙'
