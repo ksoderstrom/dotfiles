@@ -24,6 +24,8 @@ alias mkdir="mkdir -p"
 alias b="bundle"
 alias be="bundle exec"
 
+alias devbox="mosh -p 31125 devbox"
+
 bindkey "^[b" backward-word
 bindkey "^[f" forward-word
 
