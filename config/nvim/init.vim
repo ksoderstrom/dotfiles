@@ -96,14 +96,14 @@ map Q  <silent>
 map q: <silent>
 
 " allow ctrl-s to be used to save
-:nmap <c-s> :w<CR>
-:imap <c-s> <Esc>:w<CR>a
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
 
 " ctrl-h to hide highlight
-:nmap <c-h> :noh<CR>
+nmap <c-h> :noh<CR>
 
 " use t to jump to tag
-" noremap t <c-]>
+noremap <Leader>j <c-]>
 
 " let g:esearch = {
 "   \ 'adapter':    'ag',
