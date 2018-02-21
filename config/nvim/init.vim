@@ -98,6 +98,9 @@ map q: <silent>
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
 
+" ctrl-h to hide highlight
+:nmap <c-h> :noh<CR>
+
 " use t to jump to tag
 " noremap t <c-]>
 
