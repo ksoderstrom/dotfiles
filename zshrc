@@ -1,7 +1,7 @@
 # Change default zim location 
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
-export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Source zim
 if [[ -s ${ZIM_HOME}/init.zsh ]]; then
@@ -31,6 +31,7 @@ bindkey "^[f" forward-word
 
 export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
