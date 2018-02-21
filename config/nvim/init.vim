@@ -11,7 +11,6 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-ruby/vim-ruby'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'KeitaNakamura/neodark.vim'
 Plug 'itchyny/lightline.vim'
 " Plug 'eugen0329/vim-esearch'
 Plug 'w0rp/ale'
@@ -23,6 +22,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-rhubarb'
+Plug 'morhetz/gruvbox'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -60,13 +60,13 @@ set infercase                     " Completion recognizes capitalization
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
 set regexpengine=1
+set termguicolors                 " use true colors
 
 set backspace=indent,eol,start    " allow backspace to erase previously entered characters, autoindent, and newlines
 set mouse-=a                      " disable mouse input
 
-let g:neodark#terminal_transparent = 1
-let g:neodark#use_custom_terminal_theme = 1 " default: 0
-colorscheme neodark
+set background=dark
+colorscheme gruvbox
 
 " Enable deoplete when InsertEnter.
 let g:deoplete#enable_at_startup = 0
@@ -134,7 +134,7 @@ highlight link ALEErrorSign Title
 "
 " Lightline
 let g:lightline = {
-\ 'colorscheme': 'neodark',
+\ 'colorscheme': 'gruvbox',
 \ 'active': {
 \   'left': [['mode', 'paste'], ['filename', 'modified']],
 \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
