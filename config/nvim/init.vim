@@ -50,7 +50,7 @@ set smartcase                     " pay attention to case when caps are used
 set incsearch                     " show search results as I type
 set vb                            " enable visual bell (disable audio bell)
 set ruler                         " show row and column in footer
-set scrolloff=15                  " minimum lines above/below cursor
+set scrolloff=5                   " minimum lines above/below cursor
 set laststatus=2                  " always show status bar
 set list listchars=tab:»·,trail:· " show extra space characters
 set nofoldenable                  " disable code folding
@@ -97,6 +97,9 @@ map q: <silent>
 " allow ctrl-s to be used to save
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
+
+" ctrl-h to hide highlight
+:nmap <c-h> :noh<CR>
 
 " use t to jump to tag
 " noremap t <c-]>
