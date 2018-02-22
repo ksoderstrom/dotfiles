@@ -26,6 +26,23 @@ alias be="bundle exec"
 
 alias devbox="ssh devbox pkill mosh-server; mosh -p 31125 devbox"
 
+# Git aliases
+alias g="git status -sb"
+alias ga="git add"
+alias gr="git rm"
+alias gb="git branch -v"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gf="git fetch"
+alias gfa="git fetch --all"
+alias gp="git pull --rebase"
+alias gsl="git stash list"
+alias gsp="git stash pop"
+alias gss="git stash save"
+alias gd="git diff --color-words"
+
 bindkey "^[b" backward-word
 bindkey "^[f" forward-word
 
