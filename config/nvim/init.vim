@@ -152,7 +152,8 @@ let g:lightline = {
 \   'linter_errors': 'error'
 \ },
 \ 'component_function': {
-\   'gitbranch': 'fugitive#head'
+\   'gitbranch': 'fugitive#head',
+\   'filename': 'LightLineFilename'
 \ },
 \ }
 
@@ -175,6 +176,10 @@ function! LightlineLinterOK() abort
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
   return l:counts.total == 0 ? '✓ ' : ''
+endfunction
+
+function! LightLineFilename()
+  return expand('%')
 endfunction
 
 autocmd User ALELint call s:MaybeUpdateLightline()
