@@ -30,6 +30,10 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'SirVer/ultisnips'
+Plug 'letientai299/vim-react-snippets', { 'branch': 'es6' }
+Plug 'honza/vim-snippets'
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 syntax on                         " show syntax highlighting
@@ -115,7 +119,7 @@ noremap <Leader>j <c-]>
 " call esearch#map('<c-k>', 'esearch-word-under-cursor')
 
 " fzf
-nmap ; :Buffers<CR>
+nmap <Leader>b :Buffers<CR>
 " nnoremap <C-p> :Files<CR>
 nmap <Leader>t :Files<CR>
 nmap <Leader>r :Tags<CR>
@@ -131,6 +135,10 @@ let g:gitgutter_sign_modified_removed = '∙'
 " ale
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_javascript_prettier_use_local_config = 1
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 "
