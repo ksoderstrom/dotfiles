@@ -51,6 +51,7 @@ eval "$(rbenv init -)"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+export NODE_BINARY="/Users/ks/n/bin/node"
 
 if which tmux 2>&1 >/dev/null; then
   if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
