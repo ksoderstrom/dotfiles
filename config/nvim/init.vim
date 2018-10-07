@@ -12,7 +12,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
-" Plug 'eugen0329/vim-esearch'
+Plug 'eugen0329/vim-esearch'
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
@@ -109,14 +109,17 @@ nmap <c-h> :noh<CR>
 " use t to jump to tag
 noremap <Leader>j <c-]>
 
-" let g:esearch = {
-"   \ 'adapter':    'ag',
-"   \ 'backend':    'nvim',
-"   \ 'out':        'win',
-"   \ 'batch_size': 1000,
-"   \ 'use':        ['visual', 'hlsearch', 'last'],
-"   \}
-" call esearch#map('<c-k>', 'esearch-word-under-cursor')
+let g:esearch = {
+  \ 'adapter':    'ag',
+  \ 'backend':    'nvim',
+  \ 'out':        'qflist',
+  \ 'batch_size': 1000,
+  \ 'use':        ['visual', 'hlsearch', 'last'],
+  \}
+call esearch#map('<c-k>', 'esearch-word-under-cursor')
+call esearch#map('<leader>s', 'esearch')
+autocmd VimEnter * nunmap <Leader>ff
+
 
 " fzf
 nmap <Leader>b :Buffers<CR>
