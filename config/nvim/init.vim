@@ -118,7 +118,7 @@ let g:esearch = {
   \}
 call esearch#map('<c-k>', 'esearch-word-under-cursor')
 call esearch#map('<leader>s', 'esearch')
-autocmd VimEnter * nunmap <Leader>ff
+" autocmd VimEnter * nunmap <Leader>ff
 
 
 " fzf
