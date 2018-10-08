@@ -70,3 +70,7 @@ if [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
 fi
 
 export PATH="$HOME/.fastlane/bin:$PATH"
+
+if [ `hostname` = "devbox" ]; then
+  export RAILS_DATABASE_HOST=postgres
+fi
