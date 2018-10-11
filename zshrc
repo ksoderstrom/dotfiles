@@ -22,7 +22,7 @@ bindkey "^[b" backward-word
 bindkey "^[f" forward-word
 
 export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+[ -f ~/.rbenv/bin/rbenv ] && eval "$(rbenv init -)"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
