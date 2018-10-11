@@ -22,7 +22,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-rhubarb'
-Plug 'morhetz/gruvbox'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -34,6 +33,7 @@ Plug 'SirVer/ultisnips'
 Plug 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plug 'honza/vim-snippets'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 syntax on                         " show syntax highlighting
@@ -71,7 +71,14 @@ set backspace=indent,eol,start    " allow backspace to erase previously entered 
 set mouse-=a                      " disable mouse input
 
 set background=dark
-colorscheme gruvbox
+
+" nord theme
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_uniform_diff_background = 1
+let g:nord_italic_comments = 1
+
+colorscheme nord
 
 " Enable deoplete when InsertEnter.
 let g:deoplete#enable_at_startup = 0
@@ -120,7 +127,6 @@ call esearch#map('<c-k>', 'esearch-word-under-cursor')
 call esearch#map('<leader>s', 'esearch')
 " autocmd VimEnter * nunmap <Leader>ff
 
-
 " fzf
 nmap <Leader>b :Buffers<CR>
 " nnoremap <C-p> :Files<CR>
@@ -147,7 +153,7 @@ highlight link ALEErrorSign Title
 "
 " Lightline
 let g:lightline = {
-\ 'colorscheme': 'gruvbox',
+\ 'colorscheme': 'nord',
 \ 'active': {
 \   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
 \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
