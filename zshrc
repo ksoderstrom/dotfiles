@@ -1,19 +1,11 @@
-# Change default zim location 
-export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-
-export LC_ALL=en_US.UTF-8
-
-# Source zim
-if [[ -s ${ZIM_HOME}/init.zsh ]]; then
-  source ${ZIM_HOME}/init.zsh
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
-
-export EDITOR="vim"
 
 alias -g "..."="../.."
 alias -g "...."="../../.."
@@ -25,23 +17,6 @@ alias b="bundle"
 alias be="bundle exec"
 
 alias devbox="ssh devbox pkill mosh-server; mosh -p 31125 devbox"
-
-# Git aliases
-alias g="git status -sb"
-alias ga="git add"
-alias gr="git rm"
-alias gb="git branch -v"
-alias gc="git commit"
-alias gca="git commit --amend"
-alias gcm="git commit -m"
-alias gco="git checkout"
-alias gf="git fetch"
-alias gfa="git fetch --all"
-alias gp="git pull --rebase"
-alias gsl="git stash list"
-alias gsp="git stash pop"
-alias gss="git stash save"
-alias gd="git diff --color-words"
 
 bindkey "^[b" backward-word
 bindkey "^[f" forward-word
