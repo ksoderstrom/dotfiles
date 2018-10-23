@@ -22,7 +22,7 @@ bindkey "^[b" backward-word
 bindkey "^[f" forward-word
 
 export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+[ -x "$(command -v rbenv)" ] && eval "$(rbenv init -)"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
@@ -49,3 +49,6 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 if [ `hostname` = "devbox" ]; then
   export RAILS_DATABASE_HOST=postgres
 fi
+
+# export TERM=screen-256color
+export TERM=screen-256color-bce
