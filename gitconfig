@@ -20,8 +20,6 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   pager = less -+$LESS -FRX
-[merge]
-  ff = only
 [commit]
   template = ~/.gitmessage
 [fetch]
