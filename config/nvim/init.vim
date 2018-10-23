@@ -64,7 +64,7 @@ set infercase                     " Completion recognizes capitalization
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
 set regexpengine=1
-set termguicolors                 " use true colors
+" set termguicolors                 " use true colors
 set updatetime=100
 
 set backspace=indent,eol,start    " allow backspace to erase previously entered characters, autoindent, and newlines

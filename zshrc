@@ -49,3 +49,6 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 if [ `hostname` = "devbox" ]; then
   export RAILS_DATABASE_HOST=postgres
 fi
+
+# export TERM=screen-256color
+export TERM=screen-256color-bce
