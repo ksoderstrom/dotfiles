@@ -33,7 +33,7 @@ Plug 'SirVer/ultisnips'
 Plug 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plug 'honza/vim-snippets'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 syntax on                         " show syntax highlighting
@@ -64,7 +64,7 @@ set infercase                     " Completion recognizes capitalization
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
 set regexpengine=1
-" set termguicolors                 " use true colors
+set termguicolors                 " use true colors
 set updatetime=100
 
 set backspace=indent,eol,start    " allow backspace to erase previously entered characters, autoindent, and newlines
@@ -72,13 +72,9 @@ set mouse-=a                      " disable mouse input
 
 set background=dark
 
-" nord theme
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_uniform_diff_background = 1
-let g:nord_italic_comments = 1
-
-colorscheme nord
+" gruvbox theme
+let g:gruvbox_italic = 1
+colorscheme gruvbox
 
 " Enable deoplete when InsertEnter.
 let g:deoplete#enable_at_startup = 0
@@ -154,7 +150,7 @@ highlight link ALEErrorSign Title
 "
 " Lightline
 let g:lightline = {
-\ 'colorscheme': 'nord',
+\ 'colorscheme': 'gruvbox',
 \ 'active': {
 \   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
 \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
