@@ -34,6 +34,8 @@ Plug 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plug 'honza/vim-snippets'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'morhetz/gruvbox'
+Plug 'wellle/targets.vim'
+Plug 'chaoren/vim-wordmotion'
 call plug#end()
 
 syntax on                         " show syntax highlighting
