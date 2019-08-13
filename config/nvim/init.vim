@@ -7,6 +7,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-repeat'
 Plug 'vim-ruby/vim-ruby'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -30,6 +31,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'morhetz/gruvbox'
 Plug 'wellle/targets.vim'
 Plug 'chaoren/vim-wordmotion'
+Plug 'janko-m/vim-test'
 call plug#end()
 
 syntax on                         " show syntax highlighting
@@ -88,6 +90,11 @@ let mapleader = ","
 nmap <Leader>e :NERDTreeToggle<CR>
 map <C-n> :bnext<CR>
 map <C-p> :bprev<CR>
+
+" vim-test
+nmap <Leader>q :TestNearest<CR>
+nmap <Leader>l :TestFile<CR>
+nmap <Leader>a :TestSuite<CR>
 
 " having Ex mode start or showing me the command history
 " is a complete pain in the ass if i mistype
