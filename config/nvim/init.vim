@@ -132,6 +132,11 @@ nmap <Leader>r :Tags<CR>
 nmap <Leader>f :Ag<CR>
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 " Gitgutter
 let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
