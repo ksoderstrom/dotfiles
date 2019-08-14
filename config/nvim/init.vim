@@ -24,6 +24,8 @@ Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-rhubarb'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+" :CocInstall coc-ultisnips coc-html coc-json coc-css coc-eslint
+
 Plug 'SirVer/ultisnips'
 Plug 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plug 'honza/vim-snippets'
