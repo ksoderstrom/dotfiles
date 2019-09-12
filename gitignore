@@ -9,7 +9,7 @@ rerun.txt
 tags
 !tags/
 tags.lock
-tags.temp
+tags.temp*
 tmp/**/*
 !tmp/cache/.keep
 *.pyc
