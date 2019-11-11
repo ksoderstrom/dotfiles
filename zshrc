@@ -41,10 +41,10 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Always set the ssh agent in the same place
-if [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
-  ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
-  export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
-fi
+# if [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
+#   ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+#   export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
+# fi
 
 export PATH="$HOME/.fastlane/bin:$PATH"
 
@@ -61,3 +61,5 @@ export TERM=screen-256color-bce
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
