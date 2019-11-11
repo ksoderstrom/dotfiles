@@ -41,10 +41,10 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Always set the ssh agent in the same place
-if [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
-  ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
-  export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
-fi
+# if [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
+#   ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+#   export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
+# fi
 
 export PATH="$HOME/.fastlane/bin:$PATH"
 

@@ -19,13 +19,18 @@ Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-rhubarb'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-" :CocInstall coc-ultisnips coc-html coc-json coc-css coc-eslint
-
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'SirVer/ultisnips'
 Plug 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plug 'honza/vim-snippets'
@@ -211,3 +216,5 @@ function! s:MaybeUpdateLightline()
   end
 endfunction
 
+" deoplete
+let g:deoplete#enable_at_startup = 1
