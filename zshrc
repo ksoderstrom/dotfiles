@@ -72,3 +72,8 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 source ~/.iterm2_shell_integration.zsh
+
+# Source a secret profile. Typically contains HOMEBREW_GITHUB_API_TOKEN
+if [[ -s ~/.secret.zsh ]]; then
+  source ~/.secret.zsh
+fi
