@@ -1,8 +1,22 @@
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 export LC_ALL=en_US.UTF-8
-if [[ -s ${ZIM_HOME}/init.zsh ]]; then
-  source ${ZIM_HOME}/init.zsh
+
+if [[ ${ZIM_HOME}/init.zsh -ot ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  # Update static initialization script if it's outdated, before sourcing it
+  source ${ZIM_HOME}/zimfw.zsh init -q
 fi
+source ${ZIM_HOME}/init.zsh
+
+if [ -d "/opt/homebrew/bin" ]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
+if [ -d "/opt/homebrew/sbin" ]; then
+    export PATH="/opt/homebrew/sbin:$PATH"
+fi
+alias ibrew="arch --x86_64 /usr/local/bin/brew"
+alias 64="arch --x86_64"
+
+bindkey -v
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -17,18 +31,21 @@ alias mkdir="mkdir -p"
 
 alias b="bundle"
 alias be="bundle exec"
+alias vim=nvim
+alias g=git
 
 alias devbox="ssh devbox pkill mosh-server; mosh -p 31125 devbox"
 
 bindkey "^[b" backward-word
 bindkey "^[f" forward-word
 
-export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
-[ -x "$(command -v rbenv)" ] && eval "$(rbenv init -)"
-export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-export NODE_BINARY="/Users/ks/n/bin/node"
+eval "$(rbenv init -)"
+
+export N_PREFIX="$HOME/.n"
+export PATH="$N_PREFIX/bin:$PATH"
+export NODE_BINARY="$N_PREFIX/bin/node"
 
 if which tmux 2>&1 >/dev/null; then
   if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
@@ -77,3 +94,5 @@ source ~/.iterm2_shell_integration.zsh
 if [[ -s ~/.secret.zsh ]]; then
   source ~/.secret.zsh
 fi
+
+export GPG_TTY=$(tty)
