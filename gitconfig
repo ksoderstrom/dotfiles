@@ -4,6 +4,7 @@
 	signingkey = E89FD250A7F17D3121EC0C8E0EE3A8F59B846B3F
 [push]
   default = current
+	autoSetupRemote = true
 [color]
   ui = auto
 [alias]
