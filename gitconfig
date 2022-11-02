@@ -1,7 +1,6 @@
 [user]
 	email = karl@karlsoderstrom.com
-	name = Karl Söderström
-	signingkey = E89FD250A7F17D3121EC0C8E0EE3A8F59B846B3F
+	name = Karl Söderström
 [push]
   default = current
 	autoSetupRemote = true
@@ -42,4 +41,6 @@
 [includeIf "gitdir:~/src/plexian/"]
   path = ~/src/plexian/.gitconfig
 [gpg]
-	program = /opt/homebrew/bin/gpg
+  format = ssh
+[gpg "ssh"]
+	defaultKeyCommand = ssh-add -L
