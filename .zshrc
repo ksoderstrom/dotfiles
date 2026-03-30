@@ -78,6 +78,23 @@ autoload_nvmrc
 # Worktrunk — git worktree manager
 command -v wt &>/dev/null && eval "$(wt config shell init zsh)"
 
+# wts — wt wrapper that sets up a 3-pane tmux layout after switching worktrees.
+# Only runs layout setup when inside tmux with a single pane (fresh window).
+# Layout: nvim top-left (85%), shell bottom-left (15%), claude right (25%).
+compdef wts=wt
+
+wts() {
+  wt "$@" || return
+
+  [ -z "$TMUX" ] && return
+  [ "$(tmux list-panes | wc -l | tr -d ' ')" -ne 1 ] && return
+
+  local branch=$(git branch --show-current 2>/dev/null | sed 's|.*/||')
+  tmux rename-window "$branch"
+  tmux set-option -w automatic-rename off
+  tmex -l "{31}2{61}1" -f 1 -- "nvim" "" "claude"
+}
+
 # fzf
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
