@@ -1,0 +1,22 @@
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+-- Auto-reload files changed outside of Neovim (e.g. by Claude Code)
+local reload_group = augroup("AutoReload", { clear = true })
+autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  group = reload_group,
+  callback = function()
+    if vim.fn.mode() ~= "c" then
+      vim.cmd("checktime")
+    end
+  end,
+})
+
+-- Resize splits when window is resized
+local resize_group = augroup("ResizeSplits", { clear = true })
+autocmd("VimResized", {
+  group = resize_group,
+  callback = function()
+    vim.cmd([[tabdo wincmd =]])
+  end,
+})
