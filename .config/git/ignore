@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Editors
+*.sw[nop]
+.vscode/
+
+# Secrets / local config
+.env
+.env.*
+
+# Logs and databases
+log/*.log
+db/*.sqlite3
+
+# Dependencies
+node_modules/
+
+# Compiled
+*.pyc
+__pycache__/
+
+# Claude Code (local settings)
+.claude/settings.local.json

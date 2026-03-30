@@ -1,3 +1,4 @@
 .zshenv.local
 .zshrc.local
+.gitconfig.local
 .zsh_history

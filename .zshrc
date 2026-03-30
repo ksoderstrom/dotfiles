@@ -49,6 +49,9 @@ alias ls="ls --color=auto"
 alias ll="ls -lh"
 alias l=ls
 
+# GPG — needed for commit signing in terminal/tmux
+export GPG_TTY=$(tty)
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
