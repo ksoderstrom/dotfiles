@@ -2,7 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",  -- update all installed parsers when the plugin updates
   config = function()
-    require("nvim-treesitter.configs").setup({
+    require("nvim-treesitter").setup({
       -- Parsers to always have installed
       ensure_installed = {
         "typescript", "tsx", "javascript",
