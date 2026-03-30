@@ -9,6 +9,7 @@ map({ "n", "v", "o" }, "ä", "]", { remap = true })
 
 -- ── Essentials ────────────────────────────────────────────────────────────────
 map("n", "Q", "<nop>")  -- disable ex mode
+map("n", "<leader>R", "<cmd>source $MYVIMRC<CR>", { desc = "Reload config" })
 map("i", "jk", "<Esc>")
 map("n", "<leader>w", "<cmd>w<CR>")
 map("n", "<leader>q", "<cmd>q<CR>")
