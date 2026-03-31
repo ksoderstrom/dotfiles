@@ -18,12 +18,14 @@ stow .
 
 Stow symlinks everything into `~`, so `~/.tmux.conf` and `~/.config/nvim/` will point back into this repo.
 
+See [KEYMAPS.md](KEYMAPS.md) for a full keybindings cheatsheet.
+
 ## Dependencies
 
 Install with [Homebrew](https://brew.sh):
 
 ```sh
-brew install neovim tmux stow lazygit ripgrep
+brew install neovim tmux stow lazygit ripgrep fd tpm tmex
 ```
 
 ### Neovim
