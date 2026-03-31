@@ -8,8 +8,8 @@ export SAVEHIST=10000000
 setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_EXPIRE_DUPS_FIRST
 setopt HIST_REDUCE_BLANKS EXTENDED_HISTORY INC_APPEND_HISTORY
 
-# Input — vi mode, treat / as word boundary so Ctrl+W stops at path components
-bindkey -v
+# Input — treat / as word boundary so Ctrl+W stops at path components
+bindkey -e
 WORDCHARS="${WORDCHARS:s/\//}"
 
 # Completions — homebrew fpath before antigen so compinit picks it up
@@ -33,8 +33,6 @@ antigen apply
 # History substring search
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
 
 # Aliases
 alias -g "..."="../.."
@@ -78,14 +76,9 @@ autoload_nvmrc
 # Worktrunk — git worktree manager
 command -v wt &>/dev/null && eval "$(wt config shell init zsh)"
 
-# wts — wt wrapper that sets up a 3-pane tmux layout after switching worktrees.
-# Only runs layout setup when inside tmux with a single pane (fresh window).
-# Layout: nvim top-left (85%), shell bottom-left (15%), claude right (25%).
-compdef wts=wt
-
-wts() {
-  wt "$@" || return
-
+# dev — set up 3-pane tmux layout: nvim top-left (85%), shell bottom-left (15%), claude right (25%).
+# Only runs when inside tmux with a single pane (fresh window).
+dev() {
   [ -z "$TMUX" ] && return
   [ "$(tmux list-panes | wc -l | tr -d ' ')" -ne 1 ] && return
 
@@ -93,6 +86,13 @@ wts() {
   tmux rename-window "$branch"
   tmux set-option -w automatic-rename off
   tmex -l "{31}2{61}1" -f 1 -- "nvim" "" "claude"
+}
+
+# wts — switch worktree and set up dev layout
+compdef wts=wt
+wts() {
+  wt "$@" || return
+  dev
 }
 
 # fzf
