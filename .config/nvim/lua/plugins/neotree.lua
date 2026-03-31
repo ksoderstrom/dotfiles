@@ -11,15 +11,50 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      default_component_configs = {
+        indent = {
+          indent_size = 1,
+        },
+        container = {
+          enable_character_fade = false,
+        },
+      },
+      renderers = {
+        directory = {
+          { "indent" },
+          { "icon" },
+          { "current_filter" },
+          { "container", content = {
+            { "name", zindex = 10 },
+            { "clipboard", zindex = 10 },
+            { "diagnostics", zindex = 20, align = "right", hide_when_expanded = true },
+            { "git_status", zindex = 20, align = "right", hide_when_expanded = true },
+          }},
+        },
+        file = {
+          { "indent" },
+          { "icon" },
+          { "container", content = {
+            { "name", zindex = 10 },
+            { "clipboard", zindex = 10 },
+            { "bufnr", zindex = 10 },
+            { "modified", zindex = 20, align = "right" },
+            { "diagnostics", zindex = 20, align = "right" },
+            { "git_status", zindex = 20, align = "right" },
+          }},
+        },
+      },
       filesystem = {
+        group_empty_dirs = true,
+        scan_mode = "deep",
         filtered_items = {
-          hide_dotfiles = false,   -- show hidden files
+          hide_dotfiles = false,
           hide_gitignored = false,
         },
         follow_current_file = {
-          enabled = true,          -- highlight the current file in the tree
+          enabled = true,
         },
-        use_libuv_file_watcher = true,  -- watch filesystem for external changes
+        use_libuv_file_watcher = true,
       },
       window = {
         position = "left",
