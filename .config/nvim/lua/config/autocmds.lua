@@ -12,6 +12,15 @@ autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   end,
 })
 
+-- Refresh gitsigns after external file changes are reloaded
+autocmd("FileChangedShellPost", {
+  group = reload_group,
+  callback = function()
+    local gs = package.loaded.gitsigns
+    if gs then gs.refresh() end
+  end,
+})
+
 -- Resize splits when window is resized
 local resize_group = augroup("ResizeSplits", { clear = true })
 autocmd("VimResized", {

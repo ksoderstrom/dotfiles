@@ -1,7 +1,11 @@
 return {
   "lewis6991/gitsigns.nvim",
   config = function()
+    vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = "#7c6f64", italic = true })
+
     require("gitsigns").setup({
+      watch_gitdir = { enable = false },
+      current_line_blame = true,
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
         local map = function(mode, keys, func, desc)
