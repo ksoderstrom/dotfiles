@@ -80,7 +80,7 @@ command -v wt &>/dev/null && eval "$(wt config shell init zsh)"
 # Only runs when inside tmux with a single pane (fresh window).
 dev() {
   [ -z "$TMUX" ] && return
-  [ "$(tmux list-panes | wc -l | tr -d ' ')" -ne 1 ] && return
+  [ "$(tmux list-panes | wc -l | tr -d ' ')" -ne 1 ] && { echo "dev: window already has multiple panes"; return; }
 
   local branch=$(git branch --show-current 2>/dev/null | sed 's|.*/||')
   tmux rename-window "$branch"
