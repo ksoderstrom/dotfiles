@@ -2,3 +2,4 @@
 .zshrc.local
 .gitconfig.local
 .zsh_history
+.pi/.pi-changed-files.*.log

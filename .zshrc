@@ -76,16 +76,25 @@ autoload_nvmrc
 # Worktrunk — git worktree manager
 command -v wt &>/dev/null && eval "$(wt config shell init zsh)"
 
-# dev — set up 3-pane tmux layout: nvim top-left (85%), shell bottom-left (15%), claude right (25%).
+# dev — set up 3-pane tmux layout: nvim top-left (85%), shell bottom-left (15%), pi right (25%).
+# Each pane gets the same PI_CHANNEL_ID so Neovim and pi can coordinate.
 # Only runs when inside tmux with a single pane (fresh window).
 dev() {
   [ -z "$TMUX" ] && return
   [ "$(tmux list-panes | wc -l | tr -d ' ')" -ne 1 ] && { echo "dev: window already has multiple panes"; return; }
 
-  local branch=$(git branch --show-current 2>/dev/null | sed 's|.*/||')
+  local branch=$(git branch --show-current 2>/dev/null)
+  branch=${branch##*/}
+  branch=${branch:-${PWD:t}}
+
+  local pi_channel_id="${PI_CHANNEL_ID:-$(uuidgen | tr '[:upper:]' '[:lower:]')}"
+
   tmux rename-window "$branch"
   tmux set-option -w automatic-rename off
-  tmex -l "{31}2{61}1" -f 1 -- "nvim" "" "claude"
+  tmex -l "{31}2{61}1" -f 1 -- \
+    "export PI_CHANNEL_ID=$pi_channel_id; nvim; exec zsh" \
+    "export PI_CHANNEL_ID=$pi_channel_id; exec zsh" \
+    "export PI_CHANNEL_ID=$pi_channel_id; pi; exec zsh"
 }
 
 # wts — switch worktree and set up dev layout
