@@ -27,6 +27,7 @@
 [core]
 	autocrlf = input
 	pager = less -+$LESS -FRX
+	excludesfile = /Users/ks/.gitignore
 	# Global gitignore via XDG: ~/.config/git/ignore (no excludesfile needed)
 
 [alias]
