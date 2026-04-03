@@ -1,5 +1,15 @@
 ## Global coding-agent instructions
 
+### Git commits
+
+- When creating git commits, add this trailer:
+  - `Co-authored-by: pi agent core (<model name>)`
+
+### Shell scripts
+
+- Run `shellcheck` on non-trivial shell scripts/functions when available.
+- For zsh config/functions, also run `zsh -n` after edits.
+
 ### Search and discovery tools
 
 - Always use `rg` instead of `grep` for text search.
