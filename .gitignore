@@ -3,3 +3,5 @@
 .gitconfig.local
 .zsh_history
 .pi/.pi-changed-files.*.log
+.pi/agent/auth.json
+.pi/agent/sessions/
