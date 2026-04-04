@@ -3,7 +3,10 @@
 ### Git commits
 
 - When creating git commits, add this trailer:
-  - `Co-authored-by: pi agent core (<model name>)`
+  - `Co-Authored-By: {model name} <noreply@{openai,anthropic.com}>`
+- Use the domain matching the model provider:
+  - OpenAI models: `noreply@openai.com`
+  - Anthropic models: `noreply@anthropic.com`
 
 ### Shell scripts
 
